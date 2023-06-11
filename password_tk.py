@@ -25,7 +25,10 @@ class PasswordGenerator:
         self.length_entry = tk.Entry(self.root)
         self.length_entry.pack()
 
-        
+        # Create checkbuttons for each option
+        self.lower_var = tk.IntVar(value=1)
+        lower_check = tk.Checkbutton(self.root, text="Include lowercase?", variable=self.lower_var)
+        lower_check.pack()
 
         
    
