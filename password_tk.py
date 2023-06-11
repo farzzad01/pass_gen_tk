@@ -89,4 +89,7 @@ def password_generator(settings):
         final_pass += generate_random_char(choices)
     return final_pass
 
-
+if __name__ == '__main__':
+    root = tk.Tk()
+    app = PasswordGenerator(root)
+    root.mainloop()
