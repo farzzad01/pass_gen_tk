@@ -79,6 +79,14 @@ def generate_random_char(choices):
     if choice == 'space':
         return ' '
 
+def password_generator(settings):
+    final_pass = ''
+    password_length = settings['length']
+    
+    choices = list(filter(lambda x: settings[x] == True, ['upper', 'lower','symbol','number','space']))
 
+    for _ in range(password_length):
+        final_pass += generate_random_char(choices)
+    return final_pass
 
 
