@@ -30,7 +30,26 @@ class PasswordGenerator:
         lower_check = tk.Checkbutton(self.root, text="Include lowercase?", variable=self.lower_var)
         lower_check.pack()
 
-        
+        self.upper_var = tk.IntVar(value=1)
+        upper_check = tk.Checkbutton(self.root, text="Include uppercase?", variable=self.upper_var)
+        upper_check.pack()
+
+        self.number_var = tk.IntVar(value=1)
+        number_check = tk.Checkbutton(self.root, text="Include numbers?", variable=self.number_var)
+        number_check.pack()
+
+        self.symbol_var = tk.IntVar(value=1)
+        symbol_check = tk.Checkbutton(self.root, text="Include symbols?", variable=self.symbol_var)
+        symbol_check.pack()
+
+        self.space_var = tk.IntVar(value=0)
+        space_check = tk.Checkbutton(self.root, text="Include spaces?", variable=self.space_var)
+        space_check.pack()
+
+        # Create generate button
+        generate_button = tk.Button(self.root, text="Generate Password", command=self.generate_password)
+        generate_button.pack()
+
    
         
 
