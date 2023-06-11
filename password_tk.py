@@ -50,7 +50,13 @@ class PasswordGenerator:
         generate_button = tk.Button(self.root, text="Generate Password", command=self.generate_password)
         generate_button.pack()
 
-   
+    def generate_password(self):
+        # Get user inputs
+        length = self.length_entry.get()
+        self.settings['length'] = int(length) if length.isdigit() else self.settings['length']
+        self.settings['lower'] = self.lower_var.get() == 1
+        self.settings['upper'] = self.upper_var.get() == 1
+        self.settings['number'] = self.number_var.get() == 1
         
 
 
