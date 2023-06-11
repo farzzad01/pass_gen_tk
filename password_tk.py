@@ -57,8 +57,27 @@ class PasswordGenerator:
         self.settings['lower'] = self.lower_var.get() == 1
         self.settings['upper'] = self.upper_var.get() == 1
         self.settings['number'] = self.number_var.get() == 1
-        
+        self.settings['symbol'] = self.symbol_var.get() == 1
+        self.settings['space'] = self.space_var.get() == 1
 
+        # Generate password
+        password = password_generator(self.settings)
+
+        # Display the generated password
+        messagebox.showinfo("Generated Password", f"Generated Password: {password}")
+
+def generate_random_char(choices):
+    choice = random.choice(choices)
+    if choice == 'upper':
+        return random.choice(string.ascii_uppercase)
+    if choice == 'lower':
+        return random.choice(string.ascii_lowercase)
+    if choice == 'symbol':
+        return random.choice(string.punctuation)
+    if choice == 'number':
+        return random.choice(string.digits)
+    if choice == 'space':
+        return ' '
 
 
 
